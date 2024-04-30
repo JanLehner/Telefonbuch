@@ -1,0 +1,104 @@
+#addContainer {
+    height: 100%;
+    width: 100%;
+    color: #47df9c;
+    flex-direction: column;
+}
+
+#topBtnContainer {
+    height: 10%;
+    width: 100%;
+    justify-content: left;
+    align-items: top;
+}
+
+#backBtn {
+    margin: 20px;
+    height: 60%;
+    width: 7%;
+    font-size: 20px;
+    border-radius: 0.5em;
+    transition: 0.5s;
+}
+
+#backBtn:hover {
+    width: 9%;
+    font-size: 25px;
+}
+
+#formContainer {
+    height: 90%;
+    width: 100%;
+    flex-direction: column;
+}
+
+#title {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 45px;
+    text-align: center;
+}
+
+.inputfield{
+    height: 70px;
+    width: 80%;
+    text-align: center;
+    font-size: 25px;
+    color: #47df9c;
+    background-color: #1d2731;
+    border: 0;
+    border-radius: 0.5em;
+    margin: 10px;
+}
+
+#addBtn {
+    height: 18%;
+    width: 20%;
+    margin-top: 20px;
+    font-size: 20px;
+    border-radius: 0.5em;
+    transition: 0.5s;
+}
+
+#addBtn:hover {
+    width: 22%;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1250px) {
+    #backBtn {
+        width: 15%;
+    }
+
+    #backBtn:hover {
+        width: 16%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #addBtn {
+        height: 18%;
+        width: 50%;
+    }
+    
+    #addBtn:hover {
+        width: 53%;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #title {
+        font-size: 8vw;
+    }
+
+    #backBtn {
+        width: 25%;
+    }
+
+    #backBtn:hover {
+        width: 26%;
+    }
+}
