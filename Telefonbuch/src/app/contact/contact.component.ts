@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DeleteContactService } from '../delete-contact.service';
 
 interface Contact {
   name: string;
@@ -19,7 +20,9 @@ interface Contact {
           <p class="contactCardHeaderText">{{ contact.surname }}</p>
         </div>
         <div class="flexbox deleteContactBtnContainer">
-          <a class="flexbox btn deleteContactBtn">Löschen</a>
+          <a class="flexbox btn deleteContactBtn" (click)="deleteContact()"
+            >Löschen</a
+          >
         </div>
       </div>
       <div class="flexbox contactCardMain">
@@ -34,4 +37,10 @@ interface Contact {
 })
 export class ContactComponent {
   @Input() contact!: Contact;
+
+  constructor(private deleteContactService: DeleteContactService) {}
+
+  deleteContact(): void {
+    this.deleteContactService.deleteContact(this.contact.phoneNumber);
+  }
 }

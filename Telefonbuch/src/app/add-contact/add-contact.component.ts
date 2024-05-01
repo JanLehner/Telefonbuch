@@ -44,7 +44,7 @@ interface Contact {
           type="email"
           placeholder="Email Address"
         />
-        <a class="flexbox btn" id="addBtn" (click)="test()">Hinzufügen</a>
+        <a class="flexbox btn" id="addBtn" (click)="addContact()">Hinzufügen</a>
       </div>
     </div>
   `,
@@ -52,7 +52,7 @@ interface Contact {
 export class AddContactComponent {
   constructor(private addContactService: AddContactService) {}
 
-  test(): void {
+  addContact(): void {
     const name = document.getElementById('inputName') as HTMLInputElement;
     const surname = document.getElementById('inputSurname') as HTMLInputElement;
     const phoneNumber = document.getElementById(
@@ -68,7 +68,6 @@ export class AddContactComponent {
     };
 
     this.addContactService.addContact(contact);
-    // Reset input fields and hide form and reload page¨
     name.value = '';
     surname.value = '';
     phoneNumber.value = '';
