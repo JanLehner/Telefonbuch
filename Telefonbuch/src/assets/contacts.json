@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "name": "Name",
+    "surname": "Nachname",
+    "phoneNumber": "079 690 56 05",
+    "email": "J.Lehner.inf21@stud.bbbaden.ch"
+  },
+  {
+    "id": "2",
+    "name": "Max",
+    "surname": "Mustermann",
+    "phoneNumber": "012 345 67 89",
+    "email": "max.mustermann@example.com"
+  },
+  {
+    "id": "3",
+    "name": "Erika",
+    "surname": "Musterfrau",
+    "phoneNumber": "098 765 43 21",
+    "email": "erika.musterfrau@example.com"
+  }
+]

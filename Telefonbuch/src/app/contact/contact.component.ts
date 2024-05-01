@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { ContactService } from '../contact.service';
 
 interface Contact {
   name: string;
@@ -33,25 +34,14 @@ interface Contact {
   `,
   styleUrl: './contact.component.css',
 })
-export class ContactComponent {
-  contacts: Contact[] = [
-    {
-      name: 'Name',
-      surname: 'Nachname',
-      phoneNumber: '079 690 56 05',
-      email: 'J.Lehner.inf21@stud.bbbaden.ch',
-    },
-    {
-      name: 'Max',
-      surname: 'Mustermann',
-      phoneNumber: '012 345 67 89',
-      email: 'max.mustermann@example.com',
-    },
-    {
-      name: 'Erika',
-      surname: 'Musterfrau',
-      phoneNumber: '098 765 43 21',
-      email: 'erika.musterfrau@example.com',
-    },
-  ];
+export class ContactComponent implements OnInit {
+  contacts: Contact[] = [];
+
+  constructor(private contactService: ContactService) {}
+
+  ngOnInit(): void {
+    this.contactService.getContacts().subscribe((contacts) => {
+      this.contacts = contacts;
+    });
+  }
 }
