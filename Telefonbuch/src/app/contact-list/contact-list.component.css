@@ -1,57 +1,29 @@
-.contactCard {
-  height: 100%;
-  width: 100%;
-  transition: 0.5s;
-  border-radius: 0.5em;
-  flex-direction: column;
-  background-color: #12323e;
-}
-
-.contactCard:hover {
-  background-color: #33535d;
-}
-
-.contactCardHeader {
+app-add-contact-button{
   height: 20%;
   width: 100%;
-  border-radius: 0.5em;
-  background-color: #1d2731;
-  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.contactCardHeaderTextContainer {
-  height: 100%;
-  width: 70%;
-  justify-content: left;
+app-contact{
+  margin: 2.5%;
+  height: 30%;
+  width: 450px;
 }
 
-.contactCardHeaderText {
-  font-size: 20px;
-  margin-left: 15px;
+@media screen and (max-width: 550px) {
+  app-contact{
+    height: 50%;
+    width: 90%;
+  }
 }
 
-.deleteContactBtnContainer {
-  height: 100%;
-  width: 30%;
-  justify-content: right;
-}
-
-.deleteContactBtn {
-  height: 75%;
-  width: 75%;
-  margin: 10px;
-  border-radius: 0.5em;
-}
-
-.contactCardMain {
-  height: 80%;
+#contactContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
-  flex-direction: column;
-  align-items: start;
 }
 
-.contactCardMainText {
-  width: auto;
-  margin-left: 20px;
-  font-size: 20px;
-}

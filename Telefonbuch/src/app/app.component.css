@@ -19,6 +19,7 @@ main {
     grid-area: main;
     background-color: #1e0f34;
     flex-wrap: wrap;
+    overflow-y: scroll;
 }
 
 footer {
@@ -27,15 +28,12 @@ footer {
     font-size: 20px;
 }
 
-app-add-contact-button,
-app-contact {
-    height: 30vh;
-    width: 30%;
-    margin: 20px;
+app-contacts-list{
+    height: 100%;
+    width: 100%;
 }
 
 @media screen and (max-width: 1250px) {
-
     app-add-contact-button,
     app-contact {
         height: 25vh;

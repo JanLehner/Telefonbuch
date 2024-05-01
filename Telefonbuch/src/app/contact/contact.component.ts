@@ -27,9 +27,9 @@ interface Contact {
       </div>
       <div class="flexbox contactCardMain">
         <p class="contactCardMainText">
-          Telefonnummer: {{ contact.phoneNumber }}
+          Telefonnummer: <br> {{ contact.phoneNumber }}
         </p>
-        <p class="contactCardMainText">Emailadresse: {{ contact.email }}</p>
+        <p class="contactCardMainText">Emailadresse: <br> {{ contact.email }}</p>
       </div>
     </div>
   `,

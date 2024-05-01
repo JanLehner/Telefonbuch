@@ -37,8 +37,8 @@
 }
 
 .deleteContactBtn {
-  height: 75%;
-  width: 75%;
+  height: 30px;
+  width: 120px;
   margin: 10px;
   border-radius: 0.5em;
 }
@@ -54,4 +54,25 @@
   width: auto;
   margin-left: 20px;
   font-size: 20px;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 550px) {
+  .contactCardHeader {
+    flex-direction: column;
+  }
+
+  .contactCardHeaderTextContainer{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contactCardHeaderText{
+    margin: 5px;
+  }
+
+  .deleteContactBtnContainer {
+    justify-content: center;
+  }
 }
