@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { ContactService } from '../contact.service';
+import { Component, Input } from '@angular/core';
 
 interface Contact {
   name: string;
@@ -12,9 +10,9 @@ interface Contact {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [NgFor],
+  imports: [],
   template: `
-    <div *ngFor="let contact of contacts" class="flexbox contactCard">
+    <div class="flexbox contactCard">
       <div class="flexbox contactCardHeader">
         <div class="flexbox contactCardHeaderTextContainer">
           <p class="contactCardHeaderText">{{ contact.name }}</p>
@@ -32,16 +30,8 @@ interface Contact {
       </div>
     </div>
   `,
-  styleUrl: './contact.component.css',
+  styleUrls: ['./contact.component.css'],
 })
-export class ContactComponent implements OnInit {
-  contacts: Contact[] = [];
-
-  constructor(private contactService: ContactService) {}
-
-  ngOnInit(): void {
-    this.contactService.getContacts().subscribe((contacts) => {
-      this.contacts = contacts;
-    });
-  }
+export class ContactComponent {
+  @Input() contact!: Contact;
 }

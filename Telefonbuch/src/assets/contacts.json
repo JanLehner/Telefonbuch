@@ -19,5 +19,26 @@
     "surname": "Musterfrau",
     "phoneNumber": "098 765 43 21",
     "email": "erika.musterfrau@example.com"
+  },
+  {
+    "id": "2",
+    "name": "Max",
+    "surname": "Mustermann",
+    "phoneNumber": "012 345 67 89",
+    "email": "max.mustermann@example.com"
+  },
+  {
+    "id": "2",
+    "name": "Max",
+    "surname": "Mustermann",
+    "phoneNumber": "012 345 67 89",
+    "email": "max.mustermann@example.com"
+  },
+  {
+    "id": "2",
+    "name": "Max",
+    "surname": "Mustermann",
+    "phoneNumber": "012 345 67 89",
+    "email": "max.mustermann@example.com"
   }
 ]
