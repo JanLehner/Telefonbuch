@@ -1,26 +1,24 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    color: #2da670;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: #2da670;
+  font-family: "Poppins", sans-serif;
 }
 
 .flexbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
-    text-align: center;
-    background-color: #2da670;
-    color: #1d2731;
+  text-align: center;
+  background-color: #2da670;
+  color: #1d2731;
 }
 
 .btn:hover {
-    background-color:#47df9c;
-    cursor: pointer;
+  background-color: #47df9c;
+  cursor: pointer;
 }
-
-
