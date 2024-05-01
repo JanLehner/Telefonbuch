@@ -41,6 +41,9 @@ export class ContactComponent {
   constructor(private deleteContactService: DeleteContactService) {}
 
   deleteContact(): void {
+    if (!confirm('Möchten Sie diesen Kontakt wirklich löschen?')) {
+      return;
+    }
     this.deleteContactService.deleteContact(this.contact.phoneNumber);
   }
 }

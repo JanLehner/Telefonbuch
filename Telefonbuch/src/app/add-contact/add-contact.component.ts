@@ -16,7 +16,7 @@ interface Contact {
   template: `
     <div id="addContainer" class="flexbox">
       <div id="topBtnContainer" class="flexbox">
-        <a class="flexbox btn" id="backBtn">Zurück</a>
+        <a class="flexbox btn" id="backBtn" (click)="goBack()">Zurück</a>
       </div>
       <div id="formContainer" class="flexbox">
         <p id="title" class="flexbox">Kontakt hinzufügen</p>
@@ -67,6 +67,16 @@ export class AddContactComponent {
       email: email.value,
     };
 
+    if (
+      name.value === '' ||
+      surname.value === '' ||
+      phoneNumber.value === '' ||
+      email.value === ''
+    ) {
+      alert('Bitte füllen Sie alle Felder aus.');
+      return;
+    }
+
     this.addContactService.addContact(contact);
     name.value = '';
     surname.value = '';
@@ -77,5 +87,14 @@ export class AddContactComponent {
       addContainer.style.display = 'none';
     }
     location.reload();
+  }
+
+  goBack(): void {
+    const addContainer = document.getElementById('addContainer');
+    const main = document.querySelector('main');
+    if (addContainer && main) {
+      addContainer.style.display = 'none';
+      window.location.reload();
+    }
   }
 }

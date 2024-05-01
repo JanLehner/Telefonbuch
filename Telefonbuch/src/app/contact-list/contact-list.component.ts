@@ -16,11 +16,12 @@ interface Contact {
   selector: 'app-contacts-list',
   standalone: true,
   template: `
-    <div class="contacts-container">
-      <app-add-contact-button
-        (addContactClicked)="showAddContactForm = !showAddContactForm"
-      ></app-add-contact-button>
-      <app-add-contact *ngIf="showAddContactForm"></app-add-contact>
+    <app-add-contact-button
+      *ngIf="!showAddContactForm"
+      (addContactClicked)="showAddContactForm = !showAddContactForm"
+    ></app-add-contact-button>
+    <app-add-contact *ngIf="showAddContactForm"></app-add-contact>
+    <div id="contactContainer" *ngIf="!showAddContactForm">
       <app-contact
         *ngFor="let contact of contacts"
         [contact]="contact"
