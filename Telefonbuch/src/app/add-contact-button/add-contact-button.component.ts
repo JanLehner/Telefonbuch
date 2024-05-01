@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-contact-button',
   standalone: true,
   imports: [],
   template: `
-  <a class="flexbox btn" id="addContactBtn">Kontakt Hinzufügen</a>
+    <a class="flexbox btn" id="addContactBtn" (click)="onClick()"
+      >Kontakt Hinzufügen</a
+    >
   `,
-  styleUrl: './add-contact-button.component.css'
+  styleUrl: './add-contact-button.component.css',
 })
 export class AddContactButtonComponent {
-  
+  @Output() addContactClicked: EventEmitter<void> = new EventEmitter<void>();
+
+  onClick(): void {
+    this.addContactClicked.emit();
+  }
 }

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -13,18 +12,12 @@ interface Contact {
 @Injectable({
   providedIn: 'root',
 })
-export class ContactService {
-  private contactsUrl = '../assets/contacts.json';
+export class AddContactService {
+  constructor(private cookieService: CookieService) {}
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
-
-  getContacts(): Contact[] {
-    return this.getContactsFromCookie();
-  }
-
-  addContact(contacts: Contact[]): void {
-    const existingContacts: Contact[] = [];
-    existingContacts.push(...contacts);
+  addContact(contact: Contact): void {
+    const existingContacts = this.getContactsFromCookie();
+    existingContacts.push(contact);
     this.saveContactsToCookie(existingContacts);
   }
 
@@ -33,10 +26,7 @@ export class ContactService {
     if (contactsCookie) {
       return JSON.parse(contactsCookie);
     } else {
-      this.http.get<Contact[]>(this.contactsUrl).subscribe((contacts) => {
-        this.saveContactsToCookie(contacts);
-      });
-      return JSON.parse(this.cookieService.get('contacts'));
+      return [];
     }
   }
 
